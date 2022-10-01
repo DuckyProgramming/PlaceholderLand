@@ -25,26 +25,36 @@ function draw(){
                 graphics.full.fill(220)
                 graphics.full.stroke(200)
                 graphics.full.rect(400,100,600,150,5)
-                graphics.full.fill(220,220,120)
-                graphics.full.stroke(200,200,100)
-                graphics.full.rect(200,300,300,100,5)
-                graphics.full.fill(120,220,120)
-                graphics.full.stroke(100,200,100)
-                graphics.full.rect(600,300,300,100,5)
-                graphics.full.fill(220,120,120)
-                graphics.full.stroke(200,100,100)
-                graphics.full.rect(200,450,300,100,5)
-                graphics.full.fill(120,220,220)
-                graphics.full.stroke(100,200,200)
-                graphics.full.rect(600,450,300,100,5)
+                switch(questions[stage.question].length){
+                    case 5:
+                        graphics.full.rect(200,300,300,100,5)
+                        graphics.full.rect(600,300,300,100,5)
+                        graphics.full.rect(400,450,300,100,5)
+                    break
+                    case 6:
+                        graphics.full.rect(200,300,300,100,5)
+                        graphics.full.rect(600,300,300,100,5)
+                        graphics.full.rect(200,450,300,100,5)
+                        graphics.full.rect(600,450,300,100,5)
+                    break
+                }
                 graphics.full.noStroke()
                 graphics.full.fill(0)
                 graphics.full.textSize(20)
-                graphics.full.text(questions[stage.question][0],400,100)
-                graphics.full.text(questions[stage.question][1],200,300)
-                graphics.full.text(questions[stage.question][2],600,300)
-                graphics.full.text(questions[stage.question][3],200,450)
-                graphics.full.text(questions[stage.question][4],600,450)
+                graphics.full.text(questions[stage.question][0],400,100,600)
+                switch(questions[stage.question].length){
+                    case 5:
+                        graphics.full.text(questions[stage.question][1],200,300,250)
+                        graphics.full.text(questions[stage.question][2],600,300,250)
+                        graphics.full.text(questions[stage.question][3],400,450,250)
+                    break
+                    case 6:
+                        graphics.full.text(questions[stage.question][1],200,300,250)
+                        graphics.full.text(questions[stage.question][2],600,300,250)
+                        graphics.full.text(questions[stage.question][3],200,450,250)
+                        graphics.full.text(questions[stage.question][4],600,450,250)
+                    break
+                }
             }
             else{
                 graphics.full.fill(255)

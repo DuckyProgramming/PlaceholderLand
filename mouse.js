@@ -2,25 +2,26 @@ function mouseClicked(){
     if(stage.question<questions.length-1){
         if(mouseX>50*width/800&&mouseX<350*width/800&&mouseY>250*height/550&&mouseY<350*height/550&&!transition.trigger){
             transition.trigger=true
-            if(questions[stage.question][5]==0){
+            if(questions[stage.question][questions[stage.question].length-1]==0){
                 stage.score++
             }
         }
         if(mouseX>450*width/800&&mouseX<750*width/800&&mouseY>250*height/550&&mouseY<350*height/550&&!transition.trigger){
             transition.trigger=true
-            if(questions[stage.question][5]==1){
+            if(questions[stage.question][questions[stage.question].length-1]==1){
                 stage.score++
             }
         }
-        if(mouseX>50*width/800&&mouseX<350*width/800&&mouseY>400*height/550&&mouseY<500*height/550&&!transition.trigger){
+        if(mouseX>50*width/800&&mouseX<350*width/800&&mouseY>400*height/550&&mouseY<500*height/550&&!transition.trigger&&questions[stage.question].length==6||
+        mouseX>250*width/800&&mouseX<550*width/800&&mouseY>400*height/550&&mouseY<500*height/550&&!transition.trigger&&questions[stage.question].length==5){
             transition.trigger=true
-            if(questions[stage.question][5]==2){
+            if(questions[stage.question][questions[stage.question].length-1]==2){
                 stage.score++
             }
         }
-        if(mouseX>450*width/800&&mouseX<750*width/800&&mouseY>400*height/550&&mouseY<500*height/550&&!transition.trigger){
+        if(mouseX>450*width/800&&mouseX<750*width/800&&mouseY>400*height/550&&mouseY<500*height/550&&!transition.trigger&&questions[stage.question].length==6){
             transition.trigger=true
-            if(questions[stage.question][5]==3){
+            if(questions[stage.question][questions[stage.question].length-1]==3){
                 stage.score++
             }
         }
